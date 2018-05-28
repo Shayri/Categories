@@ -20,7 +20,7 @@ public class CategoryController {
 	@Autowired
     CategoryService categoryService;
 	
-	@RequestMapping(method=RequestMethod.GET, value="/add")
+	@RequestMapping(method=RequestMethod.POST, value="/add")
     public Category create(@RequestBody Category category) {
         return categoryService.create(category);
     }
