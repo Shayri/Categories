@@ -48,15 +48,12 @@ public class CategoryService {
 		return null;
 	}
 	
-	public Optional<Category> update(String id, Category category) {
+	public Category update(String id, Category category) {
 		log.info("~~~~Inside Category update~~~~~" + getClass().getSimpleName());
 		try {
-			categoryRepository.findById(id).map(c -> {
-				if(null != c && category.getTitle() != null)	
-					c.setTitle(category.getTitle());
-			return c;
-			});
-			
+			Category cat = categoryRepository.findOne(id);
+			cat.setTitle(category.getTitle());
+			return categoryRepository.save(cat);
 		} catch (Exception e) {
 			log.error("Error in Update method of " + getClass().getSimpleName() + " " + e.getMessage());
 		}

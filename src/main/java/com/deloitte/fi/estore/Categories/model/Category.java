@@ -9,11 +9,11 @@ public class Category {
 	private String id;
 	private String title;
 	
-	public Category(String id, String title) {
+	/*public Category(String id, String title) {
 		super();
 		this.id = id;
 		this.title = title;
-	}
+	}*/
 	public String getId() {
 		return id;
 	}

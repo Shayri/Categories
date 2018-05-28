@@ -36,7 +36,7 @@ public class CategoryController {
     }
 
 	@RequestMapping(method=RequestMethod.PUT, value="/{id}")
-    public Optional<Category> update(@PathVariable String id, @RequestBody Category category) {
+    public Category update(@PathVariable String id, @RequestBody Category category) {
         return categoryService.update(id,category);
     }
 	
